@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/fab_margin"
+    android:paddingRight="@dimen/fab_margin"
+    android:paddingTop="@dimen/fab_margin"
+    android:paddingBottom="@dimen/fab_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.activities.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/donateTitle"
+        android:id="@+id/donateTitle"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:text="@string/donateTitle"-->
+        <!--android:id="@+id/donateTitle"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentEnd="true" />-->
+    <!--<TextView-->
+        <!--android:id="@+id/donateSubtitle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:layout_below="@+id/donateTitle"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginTop="27dp"-->
+        <!--android:layout_alignEnd="@+id/donateTitle"-->
+        <!--android:text="@string/donateSubtitle" />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/donateSubtitle"
+        android:id="@+id/donateSubtitle"
+        android:layout_below="@+id/donateTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp"
+        android:layout_alignEnd="@+id/donateTitle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/donateButton"
+        android:id="@+id/donateButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="false"
+        android:layout_marginBottom="47dp"
+        android:onClick="donateButtonPressed"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/donateSubtitle"
+        android:layout_alignParentStart="true"
+        android:id="@+id/paymentMethod"
+        android:layout_toStartOf="@+id/amountPicker"
+        android:layout_above="@+id/progressBar">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/paypal"
+            android:id="@+id/PayPal"
+            android:checked="false" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/direct"
+            android:id="@+id/Direct"
+            android:checked="false" />
+    </RadioGroup>
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/amountPicker"
+        android:layout_alignTop="@+id/paymentMethod"
+        android:layout_alignEnd="@+id/donateSubtitle"
+        />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/progressBar"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/donateSubtitle"
+        android:layout_above="@+id/donateButton"
+        android:layout_marginBottom="70dp"
+        android:indeterminate="false"/>
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:layout_alignLeft="@+id/progressBar"
+        android:layout_above="@+id/donateButton"
+        android:layout_marginBottom="18dp"
+        android:textSize="25dp"/>
+    <EditText
+        android:id="@+id/paymentAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/amount"
+        android:hint=""
+        android:layout_alignBottom="@+id/amount"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total so far"
+        android:layout_alignBottom="@+id/donateButton"
+        android:layout_toEndOf="@+id/donateButton"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"/>
+    <TextView
+        android:id="@+id/totalSoFar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/donateButton"
+        android:layout_toEndOf="@+id/textTotal"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"/>
+
+
+</RelativeLayout>
